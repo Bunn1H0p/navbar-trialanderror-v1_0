@@ -1,3 +1,13 @@
+import './globals.css'
+import NavBar from './components/nav-bar'
+import { ReactNode } from 'react'
+import { mPlusRounded } from './ui/fonts';
+
+export const metadata = {
+  title: 'My App',
+  description: 'A modern web app',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${mPlusRounded.className} antialiased`}>
+        <NavBar />
+          <main>{children}</main>
+      </body>
     </html>
   );
 }
